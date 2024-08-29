@@ -58,7 +58,7 @@ export default function MySubmissions() {
     };
 
     fetchData();
-  }, []);
+  }, [router]);
 
   if (isLoading) return <Loader />;
 
@@ -75,7 +75,7 @@ export default function MySubmissions() {
         <h1 className="text-4xl font-extrabold mb-8 text-gray-800 tracking-tight">My Submissions</h1>
         {submissions.length === 0 ? (
           <div className="bg-white shadow-lg rounded-lg p-8 text-center">
-            <p className="text-xl text-gray-600">You haven't made any submissions yet.</p>
+            <p className="text-xl text-gray-600">You haven&apos;t made any submissions yet.</p>
             <Link href="/dashboard" className="mt-4 inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
               Start a New Submission
             </Link>

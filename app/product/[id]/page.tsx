@@ -38,7 +38,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
             setUserRole(role);
             fetchProduct();
         }
-    }, []);
+    }, [router]);
 
     const fetchProduct = async () => {
         setIsLoading(true);

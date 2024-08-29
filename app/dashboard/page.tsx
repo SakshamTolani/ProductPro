@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Loader from '../components/Loader';
 import Alert from '../components/Alert';
+import Image from 'next/image';
 
 interface AlertState {
   type: 'success' | 'error' | 'warning' | 'info';
@@ -56,7 +57,7 @@ export default function Dashboard() {
     };
 
     fetchData();
-  }, []);
+  }, [router]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -93,7 +94,7 @@ export default function Dashboard() {
           {products.map((product) => (
             <Link href={`/product/${product._id}`} key={product._id}>
               <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:-translate-y-1 hover:scale-105 hover:shadow-2xl">
-                <img src={product.imageUrl} alt={product.title} className="w-full h-48 object-cover mb-4 rounded" />
+                <Image src={product.imageUrl} alt={product.title} className="w-full h-48 object-cover mb-4 rounded" />
                 <div className="p-6">
                   <h2 className="text-2xl font-bold mb-2 text-gray-800">{product.title}</h2>
                   <p className="text-gray-600 mb-2">{product.description.substring(0, 100)}...</p>

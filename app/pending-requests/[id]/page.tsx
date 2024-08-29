@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Loader from '../../components/Loader';
 import Alert from '../../components/Alert';
+import Image from 'next/image';
 
 interface AlertState {
     type: 'success' | 'error' | 'warning' | 'info';
@@ -170,11 +171,11 @@ export default function PendingRequestDetail({ params }: { params: { id: string 
                                             <div className="space-y-4">
                                                 <div>
                                                     <p className="text-red-600 font-medium mb-2">Current:</p>
-                                                    <img src={actualValue} alt="Current Image" className="w-full h-48 object-cover rounded-lg" />
+                                                    <Image src={actualValue} alt="Current Image" className="w-full h-48 object-cover rounded-lg" />
                                                 </div>
                                                 <div>
                                                     <p className="text-green-600 font-medium mb-2">Proposed:</p>
-                                                    <img src={value as string} alt="Proposed Image" className="w-full h-48 object-cover rounded-lg" />
+                                                    <Image src={value as string} alt="Proposed Image" className="w-full h-48 object-cover rounded-lg" />
                                                 </div>
                                             </div>
                                         ) : (

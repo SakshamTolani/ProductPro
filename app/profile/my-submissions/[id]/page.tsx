@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Loader from '../../../components/Loader';
 import Alert from '../../../components/Alert';
+import Image from 'next/image';
 
 interface AlertState {
   type: 'success' | 'error' | 'warning' | 'info';
@@ -62,7 +63,7 @@ export default function SubmissionDetail({ params }: { params: { id: string } })
     };
 
     fetchData();
-  }, [params.id]);
+  }, [params.id, router]);
 
   if (isLoading) return <Loader />;
   if (!submission) return <div>Submission not found</div>;
@@ -117,7 +118,7 @@ export default function SubmissionDetail({ params }: { params: { id: string } })
             {submission.changes.imageUrl && (
               <div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">New Image</h3>
-                <img src={submission.changes.imageUrl} alt="New product image" className="w-full h-64 object-cover rounded-lg" />
+                <Image src={submission.changes.imageUrl} alt="New product image" className="w-full h-64 object-cover rounded-lg" />
               </div>
             )}
           </div>

@@ -140,7 +140,7 @@ export default function Login() {
                     </form>
                     <div className="mt-6 text-center">
                         <Link href="/register" className="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out">
-                            Don't have an account? Register
+                            Don&pos;t have an account? Register
                         </Link>
                     </div>
                 </div>
